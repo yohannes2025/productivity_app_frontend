@@ -3,8 +3,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect,
+  Routes,
+  Navigate,
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import RegistrationForm from "./components/RegistrationForm";
@@ -19,16 +19,16 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path="/register" component={RegistrationForm} />
-        <Route path="/login" component={LoginForm} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/profile" component={ProfilePage} />
-        <Route path="/tasks/create" component={TaskForm} />
-        <Route path="/tasks" component={TaskList} />
-        <Route path="/activity" component={ActivityFeed} />
-        <Redirect from="/" to="/dashboard" />
-      </Switch>
+      <Routes>
+        <Route path="/register" element={<RegistrationForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/tasks/create" element={<TaskForm />} />
+        <Route path="/tasks" element={<TaskList />} />
+        <Route path="/activity" element={<ActivityFeed />} />
+        <Route path="/" element={<Navigate to="/dashboard" />} />
+      </Routes>
     </Router>
   );
 }
