@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from './hooks/useAuth';
 
-function TaskDashboard() {
+function Dashboard() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState({ title: '', description: '', due_date: '' });
   const [success, setSuccess] = useState(false);
@@ -90,4 +90,4 @@ function TaskDashboard() {
   );
 }
 
-export default TaskDashboard;
+export default Dashboard;
