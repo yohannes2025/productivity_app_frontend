@@ -1,4 +1,5 @@
 // App.js
+import Dashboard from "./components/Dashboard";
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -14,6 +15,9 @@ import ProfilePage from "./components/ProfilePage";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import ActivityFeed from "./components/ActivityFeed";
+import TaskDashboard from "./components/TaskDashboard";
+import React from "react";
+
 
 function App() {
   return (
@@ -22,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/taskdashboard" element={<TaskDashboard/>} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/tasks/create" element={<TaskForm />} />
         <Route path="/tasks" element={<TaskList />} />
